@@ -1,0 +1,13 @@
+<h2>Chuck Norris Home</h2>
+<div ng-hide="searchName">
+    <span>First Name:</span>
+    <input type='text' ng-model='user.firstName'>
+    <br>
+    <span>Last Name:</span>
+    <input type='text' ng-model='user.lastName'>
+</div>
+<p>
+    {{ chuckNorrisJoke }}
+</p>
+<br/>
+<button ng-click="chuckNorrisMe()">Get me another</button>

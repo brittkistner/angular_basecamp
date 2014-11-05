@@ -1,0 +1,40 @@
+<h2>{{ project.name }}</h2>
+<div>{{ project.description }}</div>
+<span>Project Creator</span>
+<img src="{{ project.creator.avatar_url }}">
+
+<input type="text" class="form-control" placeholder="Filter Topics" ng-model="query">
+<span>Topics:</span>
+<div ng-repeat="topic in topics | filter: query">
+    <div>{{ topic.title }}</div>
+    <div>{{ topic.excerpt }}</div>
+</div>
+
+
+<span>Events:</span>
+<div ng-repeat="event in events">
+    <div>Event Summary: {{ event.summary }}</div>
+    <div>Event Description: {{ event.description }}</div>
+    <div>Start: {{ event.starts_at }}</div>
+    <div>End: {{ event.ends_at }}</div>
+    <a class="btn btn-default" href="#/event/edit/{{ project.id }}/{{ event.id }}">Edit</a>
+    <a class="btn btn-default" href="#/event/delete/{{ project.id }}/{{ event.id }}">Delete</a>
+</div>
+
+<span>Create Event for this Project:</span>
+<div>
+    <div>Event Summary: <input ng-model="eventSummary" placeholder="Event Summary"/></div>
+    <div>Event Description: <input ng-model="eventDescription"
+                                     placeholder="Event Description"/></div>
+    <div>Starts At: <input ng-model="starts" placeholder="2014-11-25"/></div>
+    <button class="btn btn-default" ng-click="newEvent();">Create New Event</button>
+</div>
+
+<p>*******</p>
+<div>
+    <p> Or view another project</p>
+    <div ng-repeat="project in projects">
+        <a href="#/projects/{{ project.id }}">{{ project.name }}</a>
+    </div>
+</div>
+

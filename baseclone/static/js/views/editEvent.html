@@ -1,0 +1,9 @@
+<h2>Submit changes for "{{ event.summary }}" below.</h2>
+
+<div>
+    <div>Event Summary: <input ng-model="eventSummary" placeholder="{{ event.summary }}"/></div>
+    <div>Event Description: <input ng-model="eventDescription"
+                                     placeholder="{{ event.description }}"/></div>
+    <div>Starts At: <input ng-model="starts" placeholder="{{ event.starts_at }}"/></div>
+    <button class="btn btn-default" ng-click="editEvent();">Sumbit Changes</button>
+</div>

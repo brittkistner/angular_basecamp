@@ -1,0 +1,9 @@
+<h2>Submit changes for "{{ project.name }}" below.</h2>
+
+<div>
+    <div>Project Name: <input ng-model="projectName" placeholder="{{ project.name }}"/></div>
+    <div>Project Description: <input ng-model="projectDescription"
+                                     placeholder="{{ project.description }}"/></div>
+    <button class="btn btn-default" ng-click="editProject();">Submit Changes</button>
+</div>
+

@@ -1,0 +1,25 @@
+<!--added-->
+
+<h2>Home Page</h2>
+
+<div>
+    <div>Project Name: <input ng-model="projectName" placeholder="Project Name"/></div>
+    <div>Project Description: <input ng-model="projectDescription"
+                                     placeholder="Project Description"/></div>
+    <button class="btn btn-default" ng-click="newProject();">Create New Project</button>
+</div>
+
+<!--{#PART 1#}
+{#<div ng-repeat="project in projects track by $index">#}
+{#    <div>{{ project.name }}</div>#}
+{#</div>#}-->
+
+
+<div ng-repeat="project in projects track by $index">
+    <div>
+        <a href="#/projects/{{ project.id }}">{{ project.name }}</a>
+    </div>
+
+    <a class="btn btn-default" href="#/projects/edit/{{ project.id }}">Edit</a>
+    <a class="btn btn-default" href="#/projects/delete/{{ project.id }}">Delete</a>
+</div>
